@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  position: relative;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.score {
+  position: absolute;
+  font-size: 24px;
+  top: 16px;
+  right: 16px;
+}
+
+.info {
+  position: fixed;
+  background-color: rgba(#111827, 0.4);
+  top: 0;
+  left: 0;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  display: none;
+  &.active {
+    display: flex;
+  }
+  &-modal {
+    width: 350px;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 16px;
+  }
+}
+
+#keyboard {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  .key-row {
+    display: flex;
+    gap: 8px;
+  }
+  .key {
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(#000, 0.07);
+  }
+}
+
+#board {
+  display: flex;
+  .column {
+    display: flex;
+    flex-direction: column;
+    .box {
+      width: 25px;
+      height: 25px;
+      border: 1px solid black;
+      &.head {
+        background-color: red;
+      }
+      &.body {
+        background-color: yellow;
+      }
+      &.fruit {
+        position: relative;
+        &::after {
+          position: absolute;
+          content: "";
+          background-color: blueviolet;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          left: 2.5px;
+          top: 2.5px;
+        }
+      }
+    }
+  }
+}

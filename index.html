@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div class="score">Score: <span id="score-count"></span></div>
+    <div id="board"></div>
+    <div id="keyboard">
+      <button
+        onclick="window.dispatchEvent(new KeyboardEvent('keydown', {code: 'KeyW'}))"
+        class="key"
+      >
+        Up
+      </button>
+      <div class="key-row">
+        <button
+          onclick="window.dispatchEvent(new KeyboardEvent('keydown', {code: 'KeyA'}))"
+          class="key"
+        >
+          Left
+        </button>
+        <button
+          onclick="window.dispatchEvent(new KeyboardEvent('keydown', {code: 'KeyS'}))"
+          class="key"
+        >
+          Down
+        </button>
+        <button
+          onclick="window.dispatchEvent(new KeyboardEvent('keydown', {code: 'KeyD'}))"
+          class="key"
+        >
+          Right
+        </button>
+      </div>
+    </div>
+    <div id="results" class="info">
+      <div class="info-modal">
+        <h1>Title</h1>
+        <p>message</p>
+        <button id="restart">Restart</button>
+      </div>
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
